@@ -1,11 +1,132 @@
-<html>
-  <head>
-    <title>My Git Hub page</title>
-  </head>
-  <body>
-    <h1>Hello this is my web page</h1>
 
-    <img src='https://pimcdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/images/S400875725_1?1727604007?g=0'>
-    
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Rivals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Marvel Rivals</h1>
+        <p>Discover the most iconic Marvel superheroes and their rivals</p>
+    </header>
+
+    <main>
+        <section id="heroList">
+            <h2>Marvel Heroes and Their Rivals</h2>
+            <ul id="heroRivals">
+                <!-- Rivals will be listed here dynamically using JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Marvel Rivals. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
+CSS (styles.css)
+css
+Copy code
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    background-color: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2c3e50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+JavaScript (script.js)
+javascript
+Copy code
+document.addEventListener('DOMContentLoaded', function() {
+    const heroesAndRivals = [
+        { hero: "Spider-Man", rival: "Green Goblin" },
+        { hero: "Iron Man", rival: "Thanos" },
+        { hero: "Captain America", rival: "Red Skull" },
+        { hero: "Thor", rival: "Loki" },
+        { hero: "Hulk", rival: "Abomination" },
+        { hero: "Black Panther", rival: "Killmonger" },
+        { hero: "Doctor Strange", rival: "Dormammu" },
+        { hero: "Black Widow", rival: "Taskmaster" }
+    ];
+
+    const heroListElement = document.getElementById('heroRivals');
+
+    // Loop through the array and create list items for each hero and their rival
+    heroesAndRivals.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.hero} vs ${item.rival}`;
+        heroListElement.appendChild(listItem);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
